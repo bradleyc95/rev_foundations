@@ -3,6 +3,7 @@ const {logger} = require('./util/logger');
 const users = [];
 const tickets = [];
 const pendingTickets = [];
+const ownTickets = [];
 const currentUser = [];
 let ticketID = 0;
 
@@ -73,14 +74,48 @@ function displayPendingTickets() {
     }
 }
 
+function approveTicket(index) {
+    tickets[index].status = 'approved';
+    logger.info(`Ticket #${index} approved`);
+    return `Ticket #${index} status set to approved`;
+}
+
+function denyTicket(index) {
+    tickets[index].status = 'denied';
+    logger.info(`Ticket #${index} denied`);
+    return `Ticket #${index} status set to denied`;
+}
+
+function viewOwnTickets() {
+    if (tickets.length == 0) {
+        return 'There are currently no tickets to display';
+    } else {
+        // RESET CURRENT LIST OF OWNTICKETS BEFORE DISPLAY
+        ownTickets.splice(0, ownTickets.length);
+
+        // ADD ALL OF CURRENT USER'S PREVIOUS TICKETS TO LIST
+        for (let i = 0; i < tickets.length; i++) {
+            if (tickets[i].author == currentUser[0].username) {
+                ownTickets.push(tickets[i]);
+            }
+        }
+        logger.info(`Displaying ${ownTickets.length} previous tickets`)
+        return `You have ${ownTickets.length} previous tickets`;
+    }
+}
+
 module.exports = {
     users,
     currentUser,
     tickets,
     pendingTickets,
+    ownTickets,
     createNewUser,
     logout,
     login,
     submitTicket,
-    displayPendingTickets
+    displayPendingTickets,
+    approveTicket,
+    denyTicket,
+    viewOwnTickets
 }

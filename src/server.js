@@ -1,7 +1,8 @@
 const http = require('http');
 const PORT = 3000;
 
-const {users, currentUser, tickets, pendingTickets, createNewUser, logout, login, submitTicket, displayPendingTickets} = require('./foundationsFunctions');
+const {users, currentUser, tickets, pendingTickets, ownTickets, createNewUser, logout, login, submitTicket, 
+    displayPendingTickets, approveTicket, denyTicket, viewOwnTickets} = require('./foundationsFunctions');
 
 const server = http.createServer((req, res) => {
     let body = '';
@@ -78,7 +79,7 @@ const server = http.createServer((req, res) => {
             if (currentUser.length == 0) {
                 // NOT LOGGED IN
                 res.writeHead(400, contentType);
-                res.end(JSON.stringify({message: 'You must be logged in to submit a ticket'}))
+                res.end(JSON.stringify({message: 'You must be logged in to submit a ticket'}));
             } else if (!description || !type || !amount) {
                 // MISSING FIELD
                 res.writeHead(400, contentType);
@@ -92,16 +93,80 @@ const server = http.createServer((req, res) => {
         
         // TICKETING SYSTEM -- VIEW PENDING TICKETS (ADMIN ACCESS ONLY)
         } else if (req.method == 'GET' && req.url == '/tickets?status=Pending') {
+
+            // CHECK LOGGED IN
+            if (currentUser.length == 0) {
+                res.writeHead(400, contentType);
+                res.end(JSON.stringify({message: 'You must be logged in to view tickets'}));
+
             // CHECK FOR ADMIN PRIVELEGES
-            if (currentUser[0].admin == false) {
+            } else if (currentUser[0].admin == false) {
                 res.writeHead(400, contentType);
                 res.end(JSON.stringify({message: 'Access denied -- You do not have administrative privileges'}));
             } else {
                 // ACCESS GRANTED -- DISPLAY ALL PENDING TICKETS
-                const postMessage = displayPendingTickets();
+                const getMessage = displayPendingTickets();
                 res.writeHead(201, contentType);
-                res.end(JSON.stringify({postMessage, pendingTickets}));
+                res.end(JSON.stringify({getMessage, pendingTickets}));
             }
+
+        // PROCESS TICKET
+        } else if (req.method == 'PUT' && req.url.startsWith('/tickets')) {
+            let instructions = req.url.split('/');
+            let newStatus = instructions[2];
+            let index = parseInt(instructions[3]);
+
+            // CHECK LOGGED IN
+            if (currentUser.length == 0) {
+                res.writeHead(400, contentType);
+                res.end(JSON.stringify({message: 'You must be logged in to process a ticket'}));
+
+            // CHECK FOR ADMIN PRIVILEGES
+            } else if (currentUser[0].admin == false) {
+                res.writeHead(400, contentType);
+                res.end(JSON.stringify({message: 'Access denied -- You do not have administrative privileges'}));
+            } else {
+                // ACCESS GRANTED -- ATTEMPT PROCESS TICKETS
+                // CHECK TICKET EXISTS 
+                if (!tickets[index]) {
+                    let message = `No ticket exists with ID #${index}`;
+                    res.writeHead(400, contentType);
+                    res.end(JSON.stringify({message}));
+                }
+
+                if (newStatus == 'approve') {
+                    // APPROVE TICKET
+                    const putMessage = approveTicket(index);
+                    let ticket = tickets[index];
+                    res.writeHead(201, contentType);
+                    res.end(JSON.stringify({putMessage, ticket}));
+                } else if (newStatus == 'deny') {
+                    // DENY TICKET
+                    const putMessage = denyTicket(index);
+                    let ticket = tickets[index];
+                    res.writeHead(201, contentType);
+                    res.end(JSON.stringify({putMessage, ticket}));
+                }
+            }
+
+        // DISPLAY OWN PREVIOUS TICKETS
+        } else if (req.method == 'GET' && req.url == ('/tickets')) {
+
+            // CHECK LOGGED IN
+            if (currentUser.length == 0) {
+                res.writeHead(400, contentType);
+                res.end(JSON.stringify({message: 'You must be logged in to view tickets'}));
+            } else {
+                const getMessage = viewOwnTickets();
+                res.writeHead(201, contentType);
+                res.end(JSON.stringify({getMessage, ownTickets}));
+            }
+        
+
+        // INVALID ENDPOINT
+        } else {
+            res.writeHead(404, contentType);
+            res.end(JSON.stringify({message: "Invalid Endpoint"}))
         }
 
     });

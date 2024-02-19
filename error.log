@@ -6,3 +6,10 @@
 2024-02-19T19:09:17.948Z [error]: Uncaught Exception: Error [ERR_HTTP_HEADERS_SENT]: Cannot write headers after they are sent to the client
 2024-02-19T19:22:56.084Z [error]: Uncaught Exception: Error [ERR_HTTP_HEADERS_SENT]: Cannot write headers after they are sent to the client
 2024-02-19T20:17:46.277Z [error]: Uncaught Exception: ReferenceError: logout is not defined
+2024-02-19T21:57:23.601Z [error]: Uncaught Exception: ReferenceError: approveTicket is not defined
+2024-02-19T21:57:53.279Z [error]: Uncaught Exception: ReferenceError: approveTicket is not defined
+2024-02-19T22:01:52.235Z [error]: Uncaught Exception: TypeError: approveTicket is not a function
+2024-02-19T22:02:55.233Z [error]: Uncaught Exception: TypeError: Cannot read properties of undefined (reading 'admin')
+2024-02-19T22:20:42.043Z [error]: Uncaught Exception: Error [ERR_HTTP_HEADERS_SENT]: Cannot write headers after they are sent to the client
+2024-02-19T22:21:45.246Z [error]: Uncaught Exception: Error [ERR_HTTP_HEADERS_SENT]: Cannot write headers after they are sent to the client
+2024-02-19T22:22:37.771Z [error]: Uncaught Exception: ReferenceError: putMessage is not defined

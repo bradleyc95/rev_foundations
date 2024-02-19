@@ -1,0 +1,49 @@
+2024-02-19T18:37:22.813Z [info]: Added user: revature
+2024-02-19T18:37:40.727Z [info]: Added user: revature2
+2024-02-19T18:43:49.661Z [info]: Added user: revature
+2024-02-19T18:43:57.352Z [info]: Added user: revature
+2024-02-19T18:44:48.485Z [info]: Added user: revature
+2024-02-19T18:44:54.456Z [info]: Added user: revature
+2024-02-19T18:45:31.391Z [info]: Added user: revature
+2024-02-19T18:46:06.908Z [info]: Added user: revature2
+2024-02-19T18:46:27.332Z [info]: Added user: revature
+2024-02-19T19:06:56.598Z [info]: Added user: revature
+2024-02-19T19:07:05.740Z [error]: Uncaught Exception: Error [ERR_HTTP_HEADERS_SENT]: Cannot write headers after they are sent to the client
+2024-02-19T19:08:07.315Z [info]: Added user: revature
+2024-02-19T19:08:09.672Z [info]: Added user: revature
+2024-02-19T19:09:07.612Z [info]: Added user: revature
+2024-02-19T19:09:17.948Z [error]: Uncaught Exception: Error [ERR_HTTP_HEADERS_SENT]: Cannot write headers after they are sent to the client
+2024-02-19T19:21:05.447Z [info]: Added user: revature
+2024-02-19T19:21:50.209Z [info]: Added user: revature
+2024-02-19T19:22:37.119Z [info]: Added user: admin
+2024-02-19T19:22:56.084Z [info]: Added user: revature
+2024-02-19T19:55:34.423Z [info]: Added user: revature
+2024-02-19T19:55:37.324Z [info]: Login successful: revature
+2024-02-19T19:56:15.181Z [info]: Login successful: revature
+2024-02-19T19:57:19.932Z [info]: Added user: revature
+2024-02-19T19:57:23.696Z [info]: Login successful: revature
+2024-02-19T19:58:31.634Z [info]: Added user: revature
+2024-02-19T19:58:33.631Z [info]: Login successful: revature
+2024-02-19T19:59:51.599Z [info]: Added user: revature
+2024-02-19T19:59:54.142Z [info]: Login successful: revature
+2024-02-19T19:59:56.834Z [info]: Ticket created successfully (ID: 0, User: revature)
+2024-02-19T20:06:30.601Z [info]: Added user: revature
+2024-02-19T20:06:33.193Z [info]: Login successful: revature
+2024-02-19T20:06:40.305Z [info]: Ticket created successfully (ID: 0, User: revature)
+2024-02-19T20:17:40.533Z [info]: Added user: revature
+2024-02-19T20:17:43.177Z [info]: Login successful: revature
+2024-02-19T20:17:46.277Z [error]: Uncaught Exception: ReferenceError: logout is not defined
+2024-02-19T20:19:34.397Z [info]: Added user: revature
+2024-02-19T20:19:36.024Z [info]: Login successful: revature
+2024-02-19T20:19:39.633Z [info]: Logout successful: revature
+2024-02-19T20:20:21.714Z [info]: Added user: revature
+2024-02-19T20:20:25.802Z [info]: Login successful: revature
+2024-02-19T20:20:28.820Z [info]: Logout successful: revature
+2024-02-19T20:20:43.873Z [info]: Login successful: revature
+2024-02-19T20:20:48.891Z [info]: Ticket created successfully (ID: 0, User: revature)
+2024-02-19T20:39:38.915Z [info]: Added user: admin
+2024-02-19T20:40:51.231Z [info]: Login successful: admin
+2024-02-19T20:41:02.432Z [info]: Ticket created successfully (ID: 0, User: admin)
+2024-02-19T20:41:03.759Z [info]: Ticket created successfully (ID: 1, User: admin)
+2024-02-19T20:41:04.983Z [info]: Ticket created successfully (ID: 2, User: admin)
+2024-02-19T20:41:52.986Z [info]: Displaying 3 pending tickets

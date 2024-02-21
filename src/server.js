@@ -1,4 +1,8 @@
-const http = require('http');
+// const http = require('http');
+const express = require('express');
+const app = express();
+// const ROUTERNAME = require('./controller/ROUTERNAME')
+const logger = require('./util/logger');
 const PORT = 3000;
 
 const {users, currentUser, tickets, pendingTickets, ownTickets, createNewUser, logout, login, submitTicket, 
@@ -173,6 +177,6 @@ const server = http.createServer((req, res) => {
 
 });
 
-server.listen(PORT, () => {
+app.listen(PORT, () => {
     console.log(`Server is listening on http://localhost:${PORT}`);
 });

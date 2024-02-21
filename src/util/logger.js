@@ -9,6 +9,7 @@ const logger = createLogger({
         })
     ),
     transports: [
+        new transports.Console(),
         new transports.File({filename: 'error.log', level: 'error'}),
         new transports.File({filename: 'app.log'})
     ]
@@ -19,4 +20,4 @@ process.on('uncaughtException', (error) => {
     process.exit(1);
 });
 
-module.exports = {logger};
+module.exports = logger;

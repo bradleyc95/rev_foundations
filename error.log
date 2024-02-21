@@ -13,3 +13,9 @@
 2024-02-19T22:20:42.043Z [error]: Uncaught Exception: Error [ERR_HTTP_HEADERS_SENT]: Cannot write headers after they are sent to the client
 2024-02-19T22:21:45.246Z [error]: Uncaught Exception: Error [ERR_HTTP_HEADERS_SENT]: Cannot write headers after they are sent to the client
 2024-02-19T22:22:37.771Z [error]: Uncaught Exception: ReferenceError: putMessage is not defined
+2024-02-21T21:42:47.511Z [error]: Uncaught Exception: TypeError: accountsDao.getAccountByUsername is not a function
+2024-02-21T21:43:22.618Z [error]: Cannot read properties of undefined (reading '0')
+2024-02-21T21:44:50.004Z [error]: Cannot read properties of undefined (reading '0')
+2024-02-21T21:55:06.200Z [error]: Cannot read properties of undefined (reading '0')
+2024-02-21T21:56:28.715Z [error]: Cannot read properties of undefined (reading '0')
+2024-02-21T22:10:34.931Z [error]: Uncaught Exception: ReferenceError: boolean is not defined

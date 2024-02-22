@@ -201,3 +201,65 @@
 2024-02-21T22:46:01.820Z [info]: Incoming POST to /account/login
 2024-02-21T22:48:22.510Z [info]: Incoming POST to /account/login
 2024-02-21T22:49:17.217Z [info]: Incoming POST to /account/login
+2024-02-22T21:10:18.398Z [info]: Incoming POST to /login
+2024-02-22T21:10:26.865Z [info]: Incoming POST to /account/login
+2024-02-22T21:10:34.716Z [info]: Incoming POST to /tickets
+2024-02-22T21:10:53.259Z [info]: Incoming POST to /ticket/submit
+2024-02-22T21:11:55.170Z [info]: Incoming POST to /account/login
+2024-02-22T21:12:02.997Z [info]: Incoming POST to /ticket/submit
+2024-02-22T21:12:03.129Z [error]: One or more parameter values were invalid: Missing the key ticket_id in the item
+2024-02-22T21:14:21.128Z [info]: Incoming POST to /account/login
+2024-02-22T21:14:24.278Z [info]: Incoming POST to /ticket/submit
+2024-02-22T21:16:44.564Z [info]: Incoming POST to /account/login
+2024-02-22T21:16:48.360Z [info]: Incoming POST to /ticket/submit
+2024-02-22T21:18:45.862Z [info]: Incoming POST to /account/login
+2024-02-22T21:18:49.339Z [info]: Incoming POST to /ticket/submit
+2024-02-22T21:33:16.792Z [info]: Incoming POST to /account/login
+2024-02-22T21:33:20.486Z [info]: Incoming POST to /ticket/submit
+2024-02-22T21:53:43.727Z [info]: Incoming POST to /account/login
+2024-02-22T21:54:07.366Z [info]: Incoming POST to /ticket/submit
+2024-02-22T21:54:11.037Z [info]: Incoming GET to /ticket/view
+2024-02-22T21:55:46.590Z [info]: Incoming POST to /account/login
+2024-02-22T21:55:51.240Z [info]: Incoming GET to /ticket/view
+2024-02-22T21:56:25.787Z [info]: Incoming POST to /account/login
+2024-02-22T21:56:28.186Z [info]: Incoming GET to /ticket/view
+2024-02-22T22:08:30.189Z [info]: Incoming POST to /account/login
+2024-02-22T22:08:34.786Z [info]: Incoming GET to /ticket/view
+2024-02-22T22:10:14.618Z [info]: Incoming POST to /account/login
+2024-02-22T22:10:21.494Z [info]: Incoming GET to /ticket/view
+2024-02-22T22:10:26.717Z [info]: Incoming GET to /ticket/view?type=Travel
+2024-02-22T22:10:26.757Z [error]: Invalid FilterExpression: Attribute name is a reserved keyword; reserved keyword: type
+2024-02-22T22:11:25.920Z [info]: Incoming POST to /account/login
+2024-02-22T22:11:29.645Z [info]: Incoming GET to /ticket/view?type=Travel
+2024-02-22T22:11:29.781Z [error]: Invalid FilterExpression: Attribute name is a reserved keyword; reserved keyword: type
+2024-02-22T22:12:30.693Z [info]: Incoming POST to /account/login
+2024-02-22T22:12:33.923Z [info]: Incoming GET to /ticket/view?type=Travel
+2024-02-22T22:12:34.034Z [error]: Invalid FilterExpression: Attribute name is a reserved keyword; reserved keyword: type
+2024-02-22T22:13:42.742Z [info]: Incoming POST to /account/login
+2024-02-22T22:13:47.190Z [info]: Incoming GET to /ticket/view?type=Travel
+2024-02-22T22:14:06.196Z [info]: Incoming POST to /logout
+2024-02-22T22:14:08.535Z [info]: Incoming GET to /ticket/view?type=Travel
+2024-02-22T22:14:24.195Z [info]: Incoming POST to /account/logout
+2024-02-22T22:14:30.794Z [info]: Incoming POST to /register
+2024-02-22T22:14:40.616Z [info]: Incoming POST to /account/register
+2024-02-22T22:15:03.666Z [info]: Incoming POST to /account/register
+2024-02-22T22:15:38.068Z [info]: Incoming POST to /account/register
+2024-02-22T22:17:10.943Z [info]: Incoming POST to /account/register
+2024-02-22T22:17:39.406Z [info]: Incoming POST to /account/register
+2024-02-22T22:19:55.936Z [info]: Incoming POST to /account/register
+2024-02-22T22:21:07.634Z [info]: Incoming POST to /account/register
+2024-02-22T22:21:34.119Z [info]: Incoming POST to /account/register
+2024-02-22T22:22:19.825Z [info]: Incoming POST to /account/register
+2024-02-22T22:22:20.002Z [error]: Uncaught Exception: TypeError: Cannot read properties of undefined (reading 'length')
+2024-02-22T22:23:26.165Z [info]: Incoming POST to /account/register
+2024-02-22T22:23:26.341Z [error]: Uncaught Exception: TypeError: Cannot read properties of undefined (reading 'length')
+2024-02-22T22:24:01.954Z [info]: Incoming POST to /account/register
+2024-02-22T22:25:20.110Z [info]: Incoming POST to /account/register
+2024-02-22T22:26:07.431Z [info]: Incoming POST to /account/register
+2024-02-22T22:26:14.352Z [info]: Incoming POST to /account/register
+2024-02-22T22:26:42.300Z [info]: Incoming POST to /account/register
+2024-02-22T22:26:45.270Z [info]: Incoming POST to /account/register
+2024-02-22T22:27:04.722Z [info]: Incoming POST to /account/register
+2024-02-22T22:28:04.639Z [info]: Incoming POST to /account/register
+2024-02-22T22:28:40.068Z [info]: Incoming POST to /account/register
+2024-02-22T22:28:45.085Z [info]: Incoming POST to /account/register

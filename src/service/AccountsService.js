@@ -5,7 +5,8 @@ async function createNewAccount(receivedData) {
     // Validate that required fields are not empty
     if (validateFields(receivedData)) {
         // Validate that no account with specified username already exists
-        if (!accountDoesExist(receivedData.username)) {
+        const doesExist = await accountDoesExist(receivedData.username);
+        if (!doesExist) {
             const data = await accountsDao.createNewAccount({
                 username: receivedData.username,
                 password: receivedData.password,
@@ -33,8 +34,11 @@ function logout() {
     currentUser.splice(0, currentUser.length);
 }
 
-function accountDoesExist(username) {
-    if (accountsDao.getAccountByUsername(username)) {
+async function accountDoesExist(username) {
+    const account = await accountsDao.getAccountByUsername(username);
+    // console.log(account.Items);
+    // console.log(account.Items.length);
+    if (account.Items.length > 0) {
         console.log(`An account with username: ${username} already exists`);
         return true;
     }

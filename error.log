@@ -19,3 +19,10 @@
 2024-02-21T21:55:06.200Z [error]: Cannot read properties of undefined (reading '0')
 2024-02-21T21:56:28.715Z [error]: Cannot read properties of undefined (reading '0')
 2024-02-21T22:10:34.931Z [error]: Uncaught Exception: ReferenceError: boolean is not defined
+2024-02-22T21:12:03.129Z [error]: One or more parameter values were invalid: Missing the key ticket_id in the item
+2024-02-22T22:08:34.787Z [error]: Uncaught Exception: ReferenceError: data is not defined
+2024-02-22T22:10:26.757Z [error]: Invalid FilterExpression: Attribute name is a reserved keyword; reserved keyword: type
+2024-02-22T22:11:29.781Z [error]: Invalid FilterExpression: Attribute name is a reserved keyword; reserved keyword: type
+2024-02-22T22:12:34.034Z [error]: Invalid FilterExpression: Attribute name is a reserved keyword; reserved keyword: type
+2024-02-22T22:22:20.002Z [error]: Uncaught Exception: TypeError: Cannot read properties of undefined (reading 'length')
+2024-02-22T22:23:26.341Z [error]: Uncaught Exception: TypeError: Cannot read properties of undefined (reading 'length')

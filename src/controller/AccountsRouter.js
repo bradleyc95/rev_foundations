@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
+const webToken = require('../util/WebToken');
 const accountsService = require('../service/AccountsService');
 
 // CREATE
@@ -20,7 +21,8 @@ router.post('/register', async (req, res) => {
 router.post('/login', async (req, res) => {
     const data = await accountsService.login(req.body);
     if (data) {
-        res.status(201).json({message: `Login successful, welcome: ${accountsService.currentUser[0].username}`, data});
+        const token = webToken.generateToken(req.body);
+        res.status(201).json({message: `Login successful, welcome: ${data.Items[0].username}`, data, token: token});
     } else {
         res.status(400).json({message: 'Invalid login credentials, please try again', receivedData: req.body});
     }

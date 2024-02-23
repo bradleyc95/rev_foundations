@@ -12,10 +12,10 @@ app.use((req, res, next) => {
 });
 
 // ACCOUNTS
-app.use('/account', accountsRouter);
+app.use('/accounts', accountsRouter);
 
 // TICKETS
-app.use('/ticket', ticketsRouter);
+app.use('/tickets', ticketsRouter);
 
 app.listen(PORT, () => {
     console.log(`Server is listening on http://localhost:${PORT}`);

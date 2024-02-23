@@ -12,22 +12,20 @@ async function createTicket(receivedData) {
             type: receivedData.type,
             amount: receivedData.amount,
             status: 'pending',
-            author: accountsService.currentUser[0].username
+            author: accountsService.currentUser[0].username // CHANGE THIS
         });
-        // console.log(accountsService.currentUser)
-        // console.log(data);
         return data;
     }
     return null;
 }
 
-async function getTicketsByUsername() {
-    const data = await ticketsDao.getTicketsByUsername(accountsService.currentUser[0].username);
+async function getTicketsByUsername(username) {
+    const data = await ticketsDao.getTicketsByUsername(username);
     return data;
 }
 
-async function getTicketsByUsernameAndType(typeQuery) {
-    const data = await ticketsDao.getTicketsByUsernameAndType(accountsService.currentUser[0].username, typeQuery);
+async function getTicketsByUsernameAndType(username, typeQuery) {
+    const data = await ticketsDao.getTicketsByUsernameAndType(username, typeQuery);
     return data;
 }
 

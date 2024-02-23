@@ -1,5 +1,4 @@
 const accountsDao = require('../repository/AccountsDAO');
-const currentUser = [];
 
 async function createNewAccount(receivedData) {
     // Validate that required fields are not empty
@@ -21,17 +20,13 @@ async function createNewAccount(receivedData) {
 
 async function login(receivedData) {
     const data = await accountsDao.validateLogin(receivedData.username, receivedData.password);
+
+
     if (data.Items.length == 0) {
         return null;
     } else {
-        logout();
-        currentUser.push(data.Items[0]);
         return data;
     }
-}
-
-function logout() {
-    currentUser.splice(0, currentUser.length);
 }
 
 async function accountDoesExist(username) {
@@ -56,5 +51,4 @@ function validateFields(data) {
 module.exports = {
     createNewAccount,
     login,
-    currentUser
 };

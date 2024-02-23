@@ -26,3 +26,24 @@
 2024-02-22T22:12:34.034Z [error]: Invalid FilterExpression: Attribute name is a reserved keyword; reserved keyword: type
 2024-02-22T22:22:20.002Z [error]: Uncaught Exception: TypeError: Cannot read properties of undefined (reading 'length')
 2024-02-22T22:23:26.341Z [error]: Uncaught Exception: TypeError: Cannot read properties of undefined (reading 'length')
+2024-02-23T21:19:06.404Z [error]: Uncaught Exception: TypeError: Cannot read properties of undefined (reading 'username')
+2024-02-23T21:31:45.381Z [error]: Uncaught Exception: TypeError: Cannot read properties of undefined (reading 'username')
+2024-02-23T21:36:17.095Z [error]: Uncaught Exception: ReferenceError: username is not defined
+2024-02-23T21:43:37.025Z [error]: Uncaught Exception: ReferenceError: username is not defined
+2024-02-23T21:45:48.514Z [error]: Uncaught Exception: ReferenceError: username is not defined
+2024-02-23T21:46:19.308Z [error]: Uncaught Exception: ReferenceError: username is not defined
+2024-02-23T21:49:19.124Z [error]: Uncaught Exception: TypeError: Cannot read properties of undefined (reading 'username')
+2024-02-23T21:50:44.150Z [error]: Uncaught Exception: TypeError: Cannot read properties of undefined (reading 'username')
+2024-02-23T21:50:52.049Z [error]: Uncaught Exception: TypeError: Cannot read properties of undefined (reading 'username')
+2024-02-23T22:00:22.911Z [error]: Uncaught Exception: TypeError: Cannot read properties of undefined (reading 'username')
+2024-02-23T22:05:48.325Z [error]: Uncaught Exception: TypeError: Cannot read properties of undefined (reading 'username')
+2024-02-23T22:10:21.921Z [error]: Uncaught Exception: TypeError: Cannot read properties of undefined (reading 'username')
+2024-02-23T22:10:48.966Z [error]: Uncaught Exception: TypeError: Cannot read properties of undefined (reading 'username')
+2024-02-23T22:12:41.015Z [error]: Uncaught Exception: TypeError: Cannot read properties of undefined (reading 'username')
+2024-02-23T22:12:55.625Z [error]: Uncaught Exception: TypeError: Cannot read properties of undefined (reading 'username')
+2024-02-23T22:13:14.266Z [error]: Uncaught Exception: TypeError: Cannot read properties of undefined (reading 'username')
+2024-02-23T22:13:30.729Z [error]: Uncaught Exception: TypeError: Cannot read properties of undefined (reading 'username')
+2024-02-23T22:13:44.319Z [error]: Uncaught Exception: TypeError: Cannot read properties of undefined (reading 'username')
+2024-02-23T22:14:54.417Z [error]: Uncaught Exception: TypeError: Cannot read properties of undefined (reading 'username')
+2024-02-23T22:15:12.143Z [error]: Uncaught Exception: TypeError: Cannot read properties of undefined (reading 'username')
+2024-02-23T22:25:17.084Z [error]: Uncaught Exception: ReferenceError: result is not defined

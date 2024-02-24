@@ -1,4 +1,5 @@
 const accountsDao = require('../repository/AccountsDAO');
+const encrypt = require('../util/encrypt');
 
 async function createNewAccount(receivedData) {
     // Validate that required fields are not empty
@@ -6,9 +7,10 @@ async function createNewAccount(receivedData) {
         // Validate that no account with specified username already exists
         const doesExist = await accountDoesExist(receivedData.username);
         if (!doesExist) {
+            const encryptedPassword = await encrypt.encrypt(receivedData.password);
             const data = await accountsDao.createNewAccount({
                 username: receivedData.username,
-                password: receivedData.password,
+                password: encryptedPassword,
                 is_admin: receivedData.is_admin
             });
             return data;
@@ -18,11 +20,20 @@ async function createNewAccount(receivedData) {
     return null;
 }
 
-async function login(receivedData) {
+async function login2(receivedData) {
     const data = await accountsDao.validateLogin(receivedData.username, receivedData.password);
 
-
     if (data.Items.length == 0) {
+        return null;
+    } else {
+        return data;
+    }
+}
+
+async function login(receivedData) {
+    const data = await accountsDao.getAccountByUsername(receivedData.username);
+
+    if (data.Items.length == 0 || !(await encrypt.bcrypt.compare(receivedData.password, data.Items[0].password))) {
         return null;
     } else {
         return data;

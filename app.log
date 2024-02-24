@@ -317,3 +317,13 @@
 2024-02-23T22:42:46.611Z [info]: Incoming GET to /tickets/view
 2024-02-23T22:45:31.392Z [info]: Incoming GET to /tickets/view
 2024-02-23T22:46:13.474Z [info]: Incoming GET to /tickets/view
+2024-02-23T22:46:32.192Z [info]: Incoming GET to /tickets/view
+2024-02-23T23:15:33.820Z [info]: Incoming GET to /tickets/view
+2024-02-23T23:15:40.120Z [info]: Incoming POST to /accounts/login
+2024-02-23T23:15:58.961Z [info]: Incoming GET to /tickets/view
+2024-02-23T23:17:04.546Z [info]: Incoming GET to /tickets/view
+2024-02-23T23:25:47.671Z [info]: Incoming POST to /accounts/login
+2024-02-24T19:13:46.834Z [info]: Incoming POST to /accounts/register
+2024-02-24T19:13:47.026Z [error]: Uncaught Exception: TypeError: encrypt.encrypt is not a function
+2024-02-24T19:14:16.180Z [info]: Incoming POST to /accounts/register
+2024-02-24T19:14:35.359Z [info]: Incoming POST to /accounts/login

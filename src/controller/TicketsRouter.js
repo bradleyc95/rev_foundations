@@ -58,6 +58,8 @@ function authenticateToken(req, res, next) {
             if (err) {
                 res.status(403).json({message: 'You do not have permission to access this feature'});
             } else {
+                console.log(user);
+                console.log(user.is_admin)
                 req.user = user;
                 next();
             }

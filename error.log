@@ -47,3 +47,4 @@
 2024-02-23T22:14:54.417Z [error]: Uncaught Exception: TypeError: Cannot read properties of undefined (reading 'username')
 2024-02-23T22:15:12.143Z [error]: Uncaught Exception: TypeError: Cannot read properties of undefined (reading 'username')
 2024-02-23T22:25:17.084Z [error]: Uncaught Exception: ReferenceError: result is not defined
+2024-02-24T19:13:47.026Z [error]: Uncaught Exception: TypeError: encrypt.encrypt is not a function

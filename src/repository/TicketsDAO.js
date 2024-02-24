@@ -58,8 +58,27 @@ async function getTicketsByUsernameAndType(username, typeQuery) {
     return null;
 }
 
+async function getPendingTickets() {
+    // const status = 'pending';
+    const command = new ScanCommand({
+        TableName,
+        FilterExpression: '#status = :status',
+        ExpressionAttributeNames: {'#status': 'status'},
+        ExpressionAttributeValues: {':status': 'pending'}
+    });
+
+    try {
+        const data = await documentClient.send(command);
+        return data.Items;
+    } catch (error) {
+        logger.error(error);
+    }
+    return null;
+}
+
 module.exports = {
     createTicket,
     getTicketsByUsername,
-    getTicketsByUsernameAndType
+    getTicketsByUsernameAndType,
+    getPendingTickets
 }

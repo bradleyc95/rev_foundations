@@ -7,9 +7,6 @@ const ticketsService = require('../service/TicketsService');
 // CREATE
 
 // Create a new ticket
-/**
- * TODO: Verify user is logged in before allowing submission
- */
 router.post('/submit', authenticateToken, async (req, res) => {
     const username = req.user.username;
     const data = await ticketsService.createTicket(req.body, username);
@@ -23,9 +20,6 @@ router.post('/submit', authenticateToken, async (req, res) => {
 // READ
 
 // View own tickets
-/**
- * TODO: extract username from token?
- */
 router.get('/view', authenticateToken, async (req, res) => {
     const typeQuery = req.query.type;
     const username = req.user.username;
@@ -40,6 +34,20 @@ router.get('/view', authenticateToken, async (req, res) => {
             res.status(400).json({message: 'You have no previous tickets associated with your account'})
         }
     }   
+})
+
+// View pending tickets -- ADMIN
+router.get('/view/pending', authenticateToken, async (req, res) => {
+    if (req.user.is_admin == false) {
+        res.status(403).json({messahe: 'You must have administrative permissions to access this feature'});
+    } else {
+        const data = await ticketsService.getPendingTickets();
+        if (data) {
+            res.status(200).json({message: 'Successfully retrieved all tickets with status: pending', data});
+        } else {
+            res.status(400).json({message: 'There are currently no tickets with status: pending'});
+        }
+    }
 })
 
 
@@ -59,8 +67,6 @@ function authenticateToken(req, res, next) {
             if (err) {
                 res.status(403).json({message: 'You do not have permission to access this feature'});
             } else {
-                console.log(user);
-                console.log(user.is_admin)
                 req.user = user;
                 next();
             }
@@ -80,9 +86,6 @@ function authenticateToken(req, res, next) {
     }
 }
 
-function getUsernameFromToken(token) {
-
-}
 
 
 module.exports = router;

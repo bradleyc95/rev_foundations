@@ -1,4 +1,4 @@
-const {createTicket, getTicketsByUsername, getTicketsByUsernameAndType, validateTicket} = require('../src/service/TicketsService');
+const {createTicket, getTicketsByUsername, getTicketsByUsernameAndType, getPendingTickets, validateTicket} = require('../src/service/TicketsService');
 
 const ticketsDao = require('../src/repository/TicketsDAO');
 
@@ -91,3 +91,16 @@ describe('validateTicket Tests', () => {
         expect(result).toBe(expected);
     });
 });
+
+describe('getPendingTickets Tests', () => {
+
+    test('should return data successfully', async () => {
+        jest.spyOn(ticketsDao, 'getPendingTickets').mockReturnValueOnce({ticket1: 'ticket1', ticket2: 'ticket2'});
+
+        const result = await getPendingTickets();
+        const expected = {ticket1: 'ticket1', ticket2: 'ticket2'};
+
+        expect(result).toStrictEqual(expected);
+    })
+})
+

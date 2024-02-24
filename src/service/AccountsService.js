@@ -22,7 +22,7 @@ async function createNewAccount(receivedData) {
 
 async function login(receivedData) {
     const data = await accountsDao.getAccountByUsername(receivedData.username);
-    console.log(data);
+    // console.log(data);
 
     if (data.Items.length == 0 || !(await encrypt.validatePassword(receivedData.password, data.Items[0].password))) {
         return null;

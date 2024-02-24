@@ -333,3 +333,12 @@
 2024-02-24T22:10:19.582Z [info]: Incoming POST to /accounts/login
 2024-02-24T22:10:35.848Z [info]: Incoming POST to /tickets/submit
 2024-02-24T22:11:04.471Z [info]: Incoming POST to /tickets/submit
+2024-02-24T22:48:49.216Z [info]: Incoming POST to /accounts/register
+2024-02-24T22:48:57.910Z [info]: Incoming POST to /accounts/login
+2024-02-24T22:49:40.393Z [info]: Incoming GET to /tickets/view/pending
+2024-02-24T22:49:40.535Z [error]: Invalid FilterExpression: Attribute name is a reserved keyword; reserved keyword: status
+2024-02-24T22:50:24.458Z [info]: Incoming GET to /tickets/view/pending
+2024-02-24T22:51:45.119Z [info]: Incoming GET to /tickets/view/pending
+2024-02-24T22:51:45.306Z [error]: Invalid FilterExpression: An expression attribute value used in expression is not defined; attribute value: :status
+2024-02-24T22:52:06.126Z [info]: Incoming GET to /tickets/view/pending
+2024-02-24T22:52:48.300Z [info]: Incoming GET to /tickets/view/pending

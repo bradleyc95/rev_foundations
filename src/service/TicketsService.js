@@ -2,7 +2,6 @@ const ticketsDao = require('../repository/TicketsDAO');
 const accountsService = require('./AccountsService');
 const uuid = require('uuid');
 
-// add logged-in validation
 async function createTicket(receivedData, username) {
     if (validateTicket(receivedData)) {
         const data = await ticketsDao.createTicket({
@@ -29,6 +28,11 @@ async function getTicketsByUsernameAndType(username, typeQuery) {
     return data;
 }
 
+async function getPendingTickets() {
+    const data = await ticketsDao.getPendingTickets();
+    return data;
+}
+
 // Tickets must include description, type, amount, default status of pending
 function validateTicket(receivedData) {
     if (!receivedData.description || !receivedData.type || !receivedData.amount) {
@@ -41,5 +45,6 @@ module.exports = {
     createTicket,
     getTicketsByUsername,
     getTicketsByUsernameAndType,
-    validateTicket
+    validateTicket,
+    getPendingTickets
 }

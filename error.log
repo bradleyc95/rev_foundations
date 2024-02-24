@@ -48,3 +48,5 @@
 2024-02-23T22:15:12.143Z [error]: Uncaught Exception: TypeError: Cannot read properties of undefined (reading 'username')
 2024-02-23T22:25:17.084Z [error]: Uncaught Exception: ReferenceError: result is not defined
 2024-02-24T19:13:47.026Z [error]: Uncaught Exception: TypeError: encrypt.encrypt is not a function
+2024-02-24T22:49:40.535Z [error]: Invalid FilterExpression: Attribute name is a reserved keyword; reserved keyword: status
+2024-02-24T22:51:45.306Z [error]: Invalid FilterExpression: An expression attribute value used in expression is not defined; attribute value: :status

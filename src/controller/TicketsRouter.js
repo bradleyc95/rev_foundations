@@ -10,8 +10,9 @@ const ticketsService = require('../service/TicketsService');
 /**
  * TODO: Verify user is logged in before allowing submission
  */
-router.post('/submit', async (req, res) => {
-    const data = await ticketsService.createTicket(req.body);
+router.post('/submit', authenticateToken, async (req, res) => {
+    const username = req.user.username;
+    const data = await ticketsService.createTicket(req.body, username);
     if (data) {
         res.status(201).json({message: 'Ticket created successfully', data});
     } else {

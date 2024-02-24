@@ -6,8 +6,13 @@ async function encrypt(password) {
     return encrypted;
 }
 
+async function validatePassword(receivedData, storedData) {
+    return bcrypt.compare(receivedData, storedData);
+}
+
 module.exports = {
     bcrypt,
     saltRounds,
-    encrypt
+    encrypt,
+    validatePassword
 }

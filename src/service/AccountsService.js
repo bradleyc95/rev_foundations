@@ -20,20 +20,11 @@ async function createNewAccount(receivedData) {
     return null;
 }
 
-async function login2(receivedData) {
-    const data = await accountsDao.validateLogin(receivedData.username, receivedData.password);
-
-    if (data.Items.length == 0) {
-        return null;
-    } else {
-        return data;
-    }
-}
-
 async function login(receivedData) {
     const data = await accountsDao.getAccountByUsername(receivedData.username);
+    console.log(data);
 
-    if (data.Items.length == 0 || !(await encrypt.bcrypt.compare(receivedData.password, data.Items[0].password))) {
+    if (data.Items.length == 0 || !(await encrypt.validatePassword(receivedData.password, data.Items[0].password))) {
         return null;
     } else {
         return data;
@@ -41,10 +32,8 @@ async function login(receivedData) {
 }
 
 async function accountDoesExist(username) {
-    const account = await accountsDao.getAccountByUsername(username);
-    // console.log(account.Items);
-    // console.log(account.Items.length);
-    if (account.Items.length > 0) {
+    const data = await accountsDao.getAccountByUsername(username);
+    if (data.Items.length > 0) {
         console.log(`An account with username: ${username} already exists`);
         return true;
     }
@@ -62,4 +51,6 @@ function validateFields(data) {
 module.exports = {
     createNewAccount,
     login,
+    accountDoesExist,
+    validateFields
 };

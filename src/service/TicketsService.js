@@ -3,7 +3,7 @@ const accountsService = require('./AccountsService');
 const uuid = require('uuid');
 
 // add logged-in validation
-async function createTicket(receivedData) {
+async function createTicket(receivedData, username) {
     if (validateTicket(receivedData)) {
         const data = await ticketsDao.createTicket({
             ticket_id: uuid.v4(),
@@ -12,7 +12,7 @@ async function createTicket(receivedData) {
             type: receivedData.type,
             amount: receivedData.amount,
             status: 'pending',
-            author: accountsService.currentUser[0].username // CHANGE THIS
+            author: username 
         });
         return data;
     }
@@ -40,5 +40,6 @@ function validateTicket(receivedData) {
 module.exports = {
     createTicket,
     getTicketsByUsername,
-    getTicketsByUsernameAndType
+    getTicketsByUsernameAndType,
+    validateTicket
 }

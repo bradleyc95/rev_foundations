@@ -52,6 +52,35 @@ router.get('/view/pending', authenticateToken, async (req, res) => {
 
 
 // UPDATE
+// Approve ticket -- ADMIN
+router.put('/approve', authenticateToken, async (req, res) => {
+    if (req.user.is_admin == false) {
+        res.status(403).json({messahe: 'You must have administrative permissions to access this feature'});
+    } else {
+        const ticketQuery = req.query.ticket;
+        const data = await ticketsService.updateTicketStatus('approve', ticketQuery);
+        if (data) {
+            res.status(200).json({message: 'Successfully updated ticket status to: approved', data});
+        } else {
+            res.status(400).json({message: `Failed up update ticket: ${ticketQuery}, this ticket does not exist`});
+        }
+    }
+})
+
+// Deny ticket -- ADMIN
+router.put('/deny', authenticateToken, async (req, res) => {
+    if (req.user.is_admin == false) {
+        res.status(403).json({message: 'You must have administrative permissions to access this feature'});
+    } else {
+        const ticketQuery = req.query.ticket;
+        const data = await ticketsService.updateTicketStatus('deny', ticketQuery);
+        if (data) {
+            res.status(200).json({message: 'Successfully updated ticket status to: denied', data});
+        } else {
+            res.status(400).json({message: `Failed up update ticket: ${ticketQuery}, this ticket does not exist`});
+        }
+    }
+})
 
 // DELETE
 

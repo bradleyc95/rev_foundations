@@ -1,5 +1,5 @@
 const {DynamoDBClient} = require('@aws-sdk/client-dynamodb');
-const {DynamoDBDocumentClient, PutCommand, QueryCommand, ScanCommand} = require('@aws-sdk/lib-dynamodb');
+const {DynamoDBDocumentClient, PutCommand, QueryCommand, ScanCommand, UpdateCommand} = require('@aws-sdk/lib-dynamodb');
 const logger = require('../util/logger');
 
 const client = new DynamoDBClient({region: 'us-east-1'});
@@ -59,7 +59,6 @@ async function getTicketsByUsernameAndType(username, typeQuery) {
 }
 
 async function getPendingTickets() {
-    // const status = 'pending';
     const command = new ScanCommand({
         TableName,
         FilterExpression: '#status = :status',
@@ -76,9 +75,49 @@ async function getPendingTickets() {
     return null;
 }
 
+async function updateTicketStatus(status, id) {
+    if (status == 'approve') {
+        const command = new UpdateCommand({
+            TableName,
+            Key: {ticket_id: id},
+            UpdateExpression: 'set #status = :status',
+            ExpressionAttributeNames: {'#status': 'status'},
+            ExpressionAttributeValues: {':status': 'approved'},
+            ReturnValues: 'ALL_NEW'
+        });
+
+        try {
+            const data = await documentClient.send(command);
+            return data;
+        } catch (error) {
+            logger.error(error);
+        }
+        return null;
+    } else if (status == 'deny') {
+        const command = new UpdateCommand({
+            TableName,
+            Key: {ticket_id: id},
+            UpdateExpression: 'set #status = :status',
+            ExpressionAttributeNames: {'#status': 'status'},
+            ExpressionAttributeValues: {':status': 'denied'},
+            ReturnValues: 'ALL_NEW'
+        });
+
+        try {
+            const data = await documentClient.send(command);
+            return data;
+        } catch (error) {
+            logger.error(error);
+        }
+        return null;
+    }
+    return null;
+}
+
 module.exports = {
     createTicket,
     getTicketsByUsername,
     getTicketsByUsernameAndType,
-    getPendingTickets
+    getPendingTickets,
+    updateTicketStatus
 }

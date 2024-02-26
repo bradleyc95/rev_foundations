@@ -33,6 +33,11 @@ async function getPendingTickets() {
     return data;
 }
 
+async function updateTicketStatus(status, id) {
+    const data = await ticketsDao.updateTicketStatus(status, id);
+    return data;
+}
+
 // Tickets must include description, type, amount, default status of pending
 function validateTicket(receivedData) {
     if (!receivedData.description || !receivedData.type || !receivedData.amount) {
@@ -46,5 +51,6 @@ module.exports = {
     getTicketsByUsername,
     getTicketsByUsernameAndType,
     validateTicket,
-    getPendingTickets
+    getPendingTickets,
+    updateTicketStatus
 }

@@ -50,3 +50,7 @@
 2024-02-24T19:13:47.026Z [error]: Uncaught Exception: TypeError: encrypt.encrypt is not a function
 2024-02-24T22:49:40.535Z [error]: Invalid FilterExpression: Attribute name is a reserved keyword; reserved keyword: status
 2024-02-24T22:51:45.306Z [error]: Invalid FilterExpression: An expression attribute value used in expression is not defined; attribute value: :status
+2024-02-26T16:28:40.162Z [error]: Uncaught Exception: TypeError: ticketsService.updateTicketStatus is not a function
+2024-02-26T16:28:53.790Z [error]: The provided key element does not match the schema
+2024-02-26T16:29:40.942Z [error]: The provided key element does not match the schema
+2024-02-26T16:30:47.581Z [error]: The provided key element does not match the schema

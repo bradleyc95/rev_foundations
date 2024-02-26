@@ -342,3 +342,30 @@
 2024-02-24T22:51:45.306Z [error]: Invalid FilterExpression: An expression attribute value used in expression is not defined; attribute value: :status
 2024-02-24T22:52:06.126Z [info]: Incoming GET to /tickets/view/pending
 2024-02-24T22:52:48.300Z [info]: Incoming GET to /tickets/view/pending
+2024-02-26T16:26:25.159Z [info]: Incoming POST to /accounts/login
+2024-02-26T16:27:11.395Z [info]: Incoming PUT to /tickets/approve?ticket=8d301b7d-3410-46e1-8710-a57e342749c6
+2024-02-26T16:27:42.529Z [info]: Incoming PUT to /tickets/approve?ticket=8d301b7d-3410-46e1-8710-a57e342749c6
+2024-02-26T16:27:49.871Z [info]: Incoming PUT to /tickets/approve?ticket=8d301b7d-3410-46e1-8710-a57e342749c6
+2024-02-26T16:28:21.673Z [info]: Incoming PUT to /tickets/approve?ticket=8d301b7d-3410-46e1-8710-a57e342749c6
+2024-02-26T16:28:27.191Z [info]: Incoming POST to /accounts/login
+2024-02-26T16:28:40.161Z [info]: Incoming PUT to /tickets/approve?ticket=8d301b7d-3410-46e1-8710-a57e342749c6
+2024-02-26T16:28:53.610Z [info]: Incoming PUT to /tickets/approve?ticket=8d301b7d-3410-46e1-8710-a57e342749c6
+2024-02-26T16:28:53.790Z [error]: The provided key element does not match the schema
+2024-02-26T16:29:40.770Z [info]: Incoming PUT to /tickets/approve?ticket=8d301b7d-3410-46e1-8710-a57e342749c6
+2024-02-26T16:29:40.942Z [error]: The provided key element does not match the schema
+2024-02-26T16:30:47.402Z [info]: Incoming PUT to /tickets/approve?ticket=8d301b7d-3410-46e1-8710-a57e342749c6
+2024-02-26T16:30:47.581Z [error]: The provided key element does not match the schema
+2024-02-26T16:57:01.235Z [info]: Incoming POST to /accounts/login
+2024-02-26T16:57:12.460Z [info]: Incoming POST to /ticket/submit
+2024-02-26T16:57:18.274Z [info]: Incoming POST to /tickets/submit
+2024-02-26T16:57:43.383Z [info]: Incoming POST to /tickets/submit
+2024-02-26T16:57:54.234Z [info]: Incoming POST to /tickets/submit
+2024-02-26T16:58:09.743Z [info]: Incoming POST to /tickets/submit
+2024-02-26T16:58:24.123Z [info]: Incoming POST to /tickets/submit
+2024-02-26T16:58:38.500Z [info]: Incoming POST to /tickets/submit
+2024-02-26T16:58:54.626Z [info]: Incoming POST to /tickets/submit
+2024-02-26T17:00:01.801Z [info]: Incoming PUT to /tickets/approve?ticket=101f7b44-6ee0-4d82-8c50-caf693870cd4
+2024-02-26T17:00:15.599Z [info]: Incoming GET to /tickets/view/pending
+2024-02-26T17:00:38.077Z [info]: Incoming GET to /tickets/view/pending
+2024-02-26T17:02:45.295Z [info]: Incoming POST to /tickets/submit
+2024-02-26T17:03:01.709Z [info]: Incoming PUT to /tickets/deny?ticket=e7130388-4f5d-4516-bb17-8d92445e5ec1

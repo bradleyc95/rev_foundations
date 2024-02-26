@@ -4,7 +4,6 @@ require('dotenv').config();
 // secret key
 const secretKey = process.env.SECRET_KEY;
 
-// not receiving is_admin???
 function generateToken(user) {
     const token = jwt.sign(
         {

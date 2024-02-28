@@ -39,7 +39,7 @@ router.get('/view', authenticateToken, async (req, res) => {
 // View pending tickets -- ADMIN
 router.get('/view/pending', authenticateToken, async (req, res) => {
     if (req.user.is_admin == false) {
-        res.status(403).json({messahe: 'You must have administrative permissions to access this feature'});
+        res.status(403).json({message: 'You must have administrative permissions to access this feature'});
     } else {
         const data = await ticketsService.getPendingTickets();
         if (data) {
@@ -55,7 +55,7 @@ router.get('/view/pending', authenticateToken, async (req, res) => {
 // Approve ticket -- ADMIN
 router.put('/approve', authenticateToken, async (req, res) => {
     if (req.user.is_admin == false) {
-        res.status(403).json({messahe: 'You must have administrative permissions to access this feature'});
+        res.status(403).json({message: 'You must have administrative permissions to access this feature'});
     } else {
         const ticketQuery = req.query.ticket;
         const data = await ticketsService.updateTicketStatus('approve', ticketQuery);

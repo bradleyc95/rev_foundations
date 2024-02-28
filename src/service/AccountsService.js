@@ -11,7 +11,8 @@ async function createNewAccount(receivedData) {
             const data = await accountsDao.createNewAccount({
                 username: receivedData.username,
                 password: encryptedPassword,
-                is_admin: receivedData.is_admin
+                is_admin: receivedData.is_admin,
+                profile_info: ""
             });
             return data;
         }
@@ -29,6 +30,16 @@ async function login(receivedData) {
     } else {
         return data;
     }
+}
+
+async function updateProfile(username, receivedData) {
+    const data = await accountsDao.updateProfile(username, receivedData);
+    return data;
+}
+
+async function getProfileInfo(username) {
+    const data = await accountsDao.getAccountByUsername(username);
+    return data.Items[0].profile_info;
 }
 
 async function accountDoesExist(username) {
@@ -52,5 +63,7 @@ module.exports = {
     createNewAccount,
     login,
     accountDoesExist,
-    validateFields
+    validateFields,
+    updateProfile,
+    getProfileInfo
 };

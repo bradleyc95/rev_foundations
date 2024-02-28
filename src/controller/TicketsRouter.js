@@ -25,7 +25,12 @@ router.get('/view', authenticateToken, async (req, res) => {
     const username = req.user.username;
     if (typeQuery) {
         const data = await ticketsService.getTicketsByUsernameAndType(username, typeQuery);
-        res.status(200).json({message: `Successfully retrieved all previous tickets of type: ${typeQuery}`, data});
+        if (data.length > 0) {
+            res.status(200).json({message: `Successfully retrieved all previous tickets of type: ${typeQuery}`, data});
+        } else {
+            res.status(400).json({message: `You have no previous tickets of type: ${typeQuery}`});
+        }
+
     } else {
         const data = await ticketsService.getTicketsByUsername(username);
         if (data) {
@@ -100,18 +105,6 @@ function authenticateToken(req, res, next) {
                 next();
             }
         })
-
-
-
-
-        // const result = webToken.authenticateToken(token);
-        // console.log(result);
-        // if (result == false) {
-        //     res.status(403).json({message: 'You do not have permission to access this feature'});
-        // } else {
-        //     req.user = result;
-        //     next();
-        // }
     }
 }
 

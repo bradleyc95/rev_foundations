@@ -1,5 +1,5 @@
 const {DynamoDBClient} = require('@aws-sdk/client-dynamodb');
-const {DynamoDBDocumentClient, PutCommand, QueryCommand} = require('@aws-sdk/lib-dynamodb');
+const {DynamoDBDocumentClient, PutCommand, QueryCommand, UpdateCommand} = require('@aws-sdk/lib-dynamodb');
 const logger = require('../util/logger');
 
 const client = new DynamoDBClient({region: 'us-east-1'});
@@ -57,10 +57,28 @@ async function validateLogin(username, password) {
     return null;
 }
 
+async function updateProfile(username, receivedData) {
+    const command = new UpdateCommand({
+        TableName,
+        Key: {username: username},
+        UpdateExpression: 'set profile_info = :info',
+        ExpressionAttributeValues: {':info': receivedData},
+        ReturnValues: 'ALL_NEW'
+    })
+
+    try {
+        const data = await documentClient.send(command);
+        return data;
+    } catch (error) {
+        logger.error(error);
+    }
+    return null;
+}
 
 
 module.exports = {
     createNewAccount,
     getAccountByUsername,
-    validateLogin
+    validateLogin,
+    updateProfile,
 };

@@ -2,7 +2,9 @@ const {
     createNewAccount,
     login,
     accountDoesExist,
-    validateFields
+    validateFields,
+    updateProfile,
+    getProfileInfo
 } = require('../src/service/AccountsService');
 const accountsDao = require('../src/repository/AccountsDAO');
 const encrypt = require('../src/util/encrypt');
@@ -199,4 +201,34 @@ describe('validateFields Tests', () => {
 
         expect(result).toBe(expected);
     });
+})
+
+describe('updateProfile Tests', () => {
+
+    test('should return data successfully', async () => {
+        const username = 'revature';
+        const receivedData = 'account info';
+        jest.spyOn(accountsDao, 'updateProfile').mockReturnValueOnce({account: 'account'});
+
+        const expected = {account: 'account'};
+        const result = await updateProfile(username, receivedData);
+
+        expect(result).toStrictEqual(expected);
+    }) 
+})
+
+// GETPROFILEINFO TESTS
+describe('getProfileInfo Tests', () => {
+
+    test('should return only profile_info field', async () => {
+        const username = 'revature';
+        jest.spyOn(accountsDao, 'getAccountByUsername').mockReturnValueOnce({Items: [
+            {username: 'revature', profile_info: 'profile info'}
+        ]});
+
+        const expected = 'profile info';
+        const result = await getProfileInfo(username);
+
+        expect(result).toBe(expected);
+    })
 })

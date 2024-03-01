@@ -22,9 +22,9 @@ router.post('/login', async (req, res) => {
     const data = await accountsService.login(req.body);
     if (data) {
         const token = webToken.generateToken(data.Items[0]);
-        res.status(201).json({message: `Login successful, welcome: ${data.Items[0].username}`, data, token: token});
+        res.status(201).json({message: `Login successful, welcome: ${data.Items[0].username}`, token: token});
     } else {
-        res.status(400).json({message: 'Invalid login credentials, please try again', receivedData: req.body});
+        res.status(400).json({message: 'Invalid login credentials, please try again'});
     }
 })
 

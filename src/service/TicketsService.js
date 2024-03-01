@@ -40,7 +40,7 @@ async function updateTicketStatus(status, id) {
 
 // Tickets must include description, type, amount, default status of pending
 function validateTicket(receivedData) {
-    if (!receivedData.description || !receivedData.type || !receivedData.amount) {
+    if (!receivedData.description || !receivedData.type || !receivedData.amount || receivedData.amount <= 0) {
         return false;
     }
     return true;
